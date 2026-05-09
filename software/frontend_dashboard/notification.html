@@ -1,0 +1,308 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Alerts Management Center - NutriGrow AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ffddb8",
+                    "tertiary-container": "#865400",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "primary": "#0f5238",
+                    "on-tertiary-fixed": "#2a1700",
+                    "surface-dim": "#d0dbed",
+                    "tertiary": "#663f00",
+                    "surface-container-highest": "#d9e3f6",
+                    "on-secondary-fixed-variant": "#0039b5",
+                    "on-error": "#ffffff",
+                    "outline": "#707973",
+                    "surface-tint": "#2c694e",
+                    "surface-container-high": "#dee9fc",
+                    "secondary-fixed": "#dce1ff",
+                    "inverse-primary": "#95d4b3",
+                    "outline-variant": "#bfc9c1",
+                    "inverse-surface": "#27313f",
+                    "on-secondary-fixed": "#001551",
+                    "background": "#f8f9ff",
+                    "on-surface": "#121c2a",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#e6eeff",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#b7c4ff",
+                    "primary-container": "#2d6a4f",
+                    "primary-fixed": "#b1f0ce",
+                    "secondary-container": "#4069f2",
+                    "on-primary-container": "#a8e7c5",
+                    "surface": "#f8f9ff",
+                    "surface-bright": "#f8f9ff",
+                    "on-secondary-container": "#fffbff",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#d9e3f6",
+                    "on-primary-fixed": "#002114",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#95d4b3",
+                    "surface-container-low": "#eff4ff",
+                    "on-tertiary-container": "#ffd29e",
+                    "on-surface-variant": "#404943",
+                    "secondary": "#1d4ed8",
+                    "on-primary-fixed-variant": "#0e5138",
+                    "inverse-on-surface": "#eaf1ff",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "on-background": "#121c2a",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "sm": "8px",
+                    "xl": "32px",
+                    "margin-desktop": "40px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "gutter": "20px",
+                    "margin-mobile": "16px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "data-display": ["JetBrains Mono"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "data-display": ["20px", {"lineHeight": "24px", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-surface flex flex-col min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="bg-surface shadow-sm sticky top-0 z-50 flex justify-between items-center w-full px-margin-desktop py-md">
+<div class="font-headline-md text-headline-md font-bold text-primary"><h1 class="font-headline-md text-headline-md font-semibold text-primary dark:text-primary-fixed cursor-text" spellcheck="false" data-stitch-added-classes="cursor-text" style="--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; --tw-text-opacity: 1; color: rgb(15, 82, 56); outline: none !important;">RootSync&nbsp;</h1></div>
+<nav class="hidden md:flex items-center gap-xl">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="#">Dashboard</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="#">Growth</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="#">History</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-semibold font-body-md text-body-md" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all active:scale-95" data-icon="notifications">notifications</button>
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden border border-outline-variant">
+<img alt="Grower Profile" data-alt="A professional portrait of a tech-focused agriculturist in a bright, modern office environment. The individual is wearing a smart-casual shirt, exuding confidence and expertise. The background is softly blurred with hints of lush indoor vertical farming equipment, maintaining a clean, high-key light-mode aesthetic with professional studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKYnZ8k3EYnLEfeKUrkmTDmhX02mifiPnqHsTAQNAsAztyBE9dGt6aiikzy5QnnrY6WvdAtiRfHOvJ5qb6wc05PtKBXqpNiNlMxxonquV4E-x0Vq0EGCrTaAjHtWKLXxs4apmTEJfRcfpXHUwxc2AIID7FT5dn1el6ZzOxj15fLaXf-qNV1WTEkFSfBsVN9JYiTo2mxGelUB3gd0iADKR_2o9TKgTnuMC8bFIJbQCtdN15m6us6kVZjN9IIPFb2xOEhXWpJbQlvmtO" class="">
+</div>
+</div>
+</header>
+<main class="flex-grow px-margin-desktop py-xl max-w-7xl mx-auto w-full">
+<!-- Header Section -->
+<section class="mb-xl">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Alerts &amp; Notification Center</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage your system criticalities and automated fail-safe responses.</p>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Bento Grid Left: Critical Alerts -->
+<div class="lg:col-span-8 space-y-gutter">
+<div class="bg-surface-container-lowest rounded-xl p-lg shadow-[0_4px_20px_rgba(18,28,42,0.04)] border border-surface-variant/50">
+<div class="flex justify-between items-center mb-lg">
+<h2 class="font-headline-md text-headline-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-error" data-icon="warning">warning</span>
+                            Critical Alerts
+                        </h2>
+<span class="bg-error-container text-on-error-container px-sm py-xs rounded font-label-sm text-label-sm">3 Active</span>
+</div>
+<div class="space-y-md">
+<!-- Alert Item 1 -->
+<div class="flex gap-md p-md bg-error-container/10 border-l-4 border-error rounded-r-lg">
+<div class="flex-shrink-0 mt-xs">
+<span class="material-symbols-outlined text-error" data-icon="water_ph" style="font-variation-settings: &quot;FILL&quot; 1;">water_ph</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-[18px] text-on-surface">pH out of range</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 mins ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Current pH is 4.2 (Target: 5.5 - 6.5). Nutrient lockout risk is high.</p>
+<div class="mt-md flex gap-sm">
+<button class="px-md py-xs bg-primary text-on-primary rounded font-label-sm text-label-sm hover:opacity-90 transition-all">Adjust Now</button>
+<button class="px-md py-xs border border-outline text-on-surface font-label-sm text-label-sm rounded hover:bg-surface-variant/20">Dismiss</button>
+</div>
+</div>
+</div>
+<!-- Alert Item 2 -->
+<div class="flex gap-md p-md bg-tertiary-fixed/20 border-l-4 border-tertiary rounded-r-lg">
+<div class="flex-shrink-0 mt-xs">
+<span class="material-symbols-outlined text-tertiary" data-icon="opacity" style="font-variation-settings: &quot;FILL&quot; 1;">opacity</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-[18px] text-on-surface">Reservoir Low</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">15 mins ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Water level at 8%. System will trigger emergency shutoff at 5%.</p>
+</div>
+</div>
+<!-- Alert Item 3 -->
+<div class="flex gap-md p-md bg-error-container/10 border-l-4 border-error rounded-r-lg">
+<div class="flex-shrink-0 mt-xs">
+<span class="material-symbols-outlined text-error" data-icon="moped" style="font-variation-settings: &quot;FILL&quot; 1;">moped</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-[18px] text-on-surface">Pump Failure (Module B)</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">42 mins ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Zero pressure detected in irrigation line. Check power source.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Safety Logs Table -->
+<div class="bg-surface-container-lowest rounded-xl p-lg shadow-[0_4px_20px_rgba(18,28,42,0.04)] border border-surface-variant/50">
+<h2 class="font-headline-md text-headline-md mb-lg">Safety Logs</h2>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="border-b border-outline-variant">
+<th class="text-left py-md px-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Timestamp</th>
+<th class="text-left py-md px-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Event</th>
+<th class="text-left py-md px-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Trigger</th>
+<th class="text-right py-md px-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Status</th>
+</tr>
+</thead>
+<tbody class="font-data-display text-data-display text-[14px]">
+<tr class="border-b border-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<td class="py-md px-sm">2024-05-12 14:22:01</td>
+<td class="py-md px-sm">Emergency Pump Cutoff</td>
+<td class="py-md px-sm">Dry Run Detection</td>
+<td class="py-md px-sm text-right"><span class="bg-primary-container/20 text-on-primary-container px-xs py-1 rounded font-label-sm">RESOLVED</span></td>
+</tr>
+<tr class="border-b border-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<td class="py-md px-sm">2024-05-12 09:15:44</td>
+<td class="py-md px-sm">Nutrient Flow Halt</td>
+<td class="py-md px-sm">EC Over-Saturation</td>
+<td class="py-md px-sm text-right"><span class="bg-tertiary-fixed/40 text-on-tertiary-fixed px-xs py-1 rounded font-label-sm">PENDING</span></td>
+</tr>
+<tr class="border-b border-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<td class="py-md px-sm">2024-05-11 23:05:12</td>
+<td class="py-md px-sm">Heater Disconnect</td>
+<td class="py-md px-sm">Over-Temp Threshold</td>
+<td class="py-md px-sm text-right"><span class="bg-primary-container/20 text-on-primary-container px-xs py-1 rounded font-label-sm">RESOLVED</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right Sidebar: Notification Settings -->
+<aside class="lg:col-span-4 space-y-gutter">
+<div class="bg-surface-container-lowest rounded-xl p-lg shadow-[0_4px_20px_rgba(18,28,42,0.04)] border border-surface-variant/50 sticky top-[100px]">
+<h2 class="font-headline-md text-headline-md mb-lg">Notification Channels</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">Configure how you receive critical system updates.</p>
+<div class="space-y-xl">
+<!-- Email Toggle -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+<div>
+<p class="font-body-md text-body-md font-semibold">Email Alerts</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Daily summaries &amp; criticals</p>
+</div>
+</div>
+<button class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary-container">
+<span class="inline-block h-4 w-4 transform rounded-full bg-white transition translate-x-6"></span>
+</button>
+</div>
+<!-- Dashboard Toggle -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="dashboard">dashboard</span>
+<div>
+<p class="font-body-md text-body-md font-semibold">Dashboard Banner</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Real-time UI overlays</p>
+</div>
+</div>
+<button class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary-container">
+<span class="inline-block h-4 w-4 transform rounded-full bg-white transition translate-x-6"></span>
+</button>
+</div>
+<!-- Push Toggle -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="notifications_active">notifications_active</span>
+<div>
+<p class="font-body-md text-body-md font-semibold">Push Notifications</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Mobile &amp; browser prompts</p>
+</div>
+</div>
+<button class="relative inline-flex h-6 w-11 items-center rounded-full bg-outline-variant">
+<span class="inline-block h-4 w-4 transform rounded-full bg-white transition translate-x-1"></span>
+</button>
+</div>
+</div>
+<div class="mt-xl pt-lg border-t border-outline-variant">
+<button class="w-full py-md bg-surface-container text-primary font-body-md text-body-md font-bold rounded-lg hover:bg-surface-variant transition-all">
+                            Test Channels
+                        </button>
+</div>
+</div>
+<!-- Secondary Info Card -->
+<div class="bg-primary-container text-on-primary-container rounded-xl p-lg overflow-hidden relative">
+<div class="relative z-10">
+<h3 class="font-headline-md text-[20px] mb-sm">Proactive Support</h3>
+<p class="font-body-md text-body-md opacity-90 mb-md">Our AI is monitoring 42 sensors. 98.2% stability over 7 days.</p>
+<a class="font-label-sm text-label-sm underline font-bold" href="#">View System Health Report</a>
+</div>
+<span class="material-symbols-outlined absolute -bottom-4 -right-4 text-[120px] opacity-10" data-icon="psychology">psychology</span>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest border-t border-outline-variant full-width py-xl mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-full gap-md">
+<div class="font-label-sm text-label-sm font-black tracking-widest text-on-surface-variant uppercase">
+                © 2024 University of Kelaniya • Precision Agriculture Dept.
+            </div>
+<div class="flex gap-lg">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="#">Documentation</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="#">Project Proposal</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="#">University Credits</a>
+</div>
+</div>
+</footer>
+
+
+</body></html>

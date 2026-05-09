@@ -1,0 +1,314 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>NutriGrow AI | HydroPure Precision</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ffddb8",
+                    "tertiary-container": "#865400",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "primary": "#0f5238",
+                    "on-tertiary-fixed": "#2a1700",
+                    "surface-dim": "#d0dbed",
+                    "tertiary": "#663f00",
+                    "surface-container-highest": "#d9e3f6",
+                    "on-secondary-fixed-variant": "#0039b5",
+                    "on-error": "#ffffff",
+                    "outline": "#707973",
+                    "surface-tint": "#2c694e",
+                    "surface-container-high": "#dee9fc",
+                    "secondary-fixed": "#dce1ff",
+                    "inverse-primary": "#95d4b3",
+                    "outline-variant": "#bfc9c1",
+                    "inverse-surface": "#27313f",
+                    "on-secondary-fixed": "#001551",
+                    "background": "#f8f9ff",
+                    "on-surface": "#121c2a",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#e6eeff",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#b7c4ff",
+                    "primary-container": "#2d6a4f",
+                    "primary-fixed": "#b1f0ce",
+                    "secondary-container": "#4069f2",
+                    "on-primary-container": "#a8e7c5",
+                    "surface": "#f8f9ff",
+                    "surface-bright": "#f8f9ff",
+                    "on-secondary-container": "#fffbff",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#d9e3f6",
+                    "on-primary-fixed": "#002114",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#95d4b3",
+                    "surface-container-low": "#eff4ff",
+                    "on-tertiary-container": "#ffd29e",
+                    "on-surface-variant": "#404943",
+                    "secondary": "#1d4ed8",
+                    "on-primary-fixed-variant": "#0e5138",
+                    "inverse-on-surface": "#eaf1ff",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "on-background": "#121c2a",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "sm": "8px",
+                    "xl": "32px",
+                    "margin-desktop": "40px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "gutter": "20px",
+                    "margin-mobile": "16px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "data-display": ["JetBrains Mono"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "data-display": ["20px", {"lineHeight": "24px", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #f8f9ff;
+            color: #121c2a;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-margin-desktop py-md sticky top-0 z-50 bg-surface shadow-sm">
+<div class="font-headline-md text-headline-md font-bold text-primary"><h1 class="font-headline-md text-headline-md font-semibold text-primary dark:text-primary-fixed cursor-text" spellcheck="false" data-stitch-added-classes="cursor-text" style="--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; --tw-text-opacity: 1; color: rgb(15, 82, 56); outline: none !important;">RootSync&nbsp;</h1></div>
+<nav class="hidden md:flex items-center gap-xl">
+<a class="text-primary border-b-2 border-primary pb-1 font-semibold hover:text-primary transition-colors duration-200" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="dashboard.html">Dashboard</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="growth.html">Growth</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="history.html">History</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="settings.html">Settings</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="active:scale-95 transform transition-all text-primary">
+<span class="material-symbols-outlined" data-icon="notifications">
+        <a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="notification.html">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container">
+<img alt="Grower Profile" data-alt="A professional headshot of a smiling agricultural researcher in a clean lab setting. The lighting is bright and high-key, emphasizing a modern light-mode aesthetic. The background is a soft-focus laboratory with subtle equipment, using a palette of soft whites and clean primary greens to match the brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOAcwObrgJ2nk-5RfETKIw28Xg_y6RhrB7hRSGyNvKZ3neJaKTbCECZvqGi68UBYYk7bzmI0_sWVj1xZ7m9DE4GcKVEfcYaWRvs-dNZ9tbUyqyMAQRmLfZtb9hJDTB9UqA-GOqelH-uZlyn4uhUACfKhM-j_tnwwAdZezfhjCAWv9LilMbXa9fiD327lNC6MPSlIizqFaRW03hUotiwhXA8wbgpuMqscwRkOa-8fGZbDKkeSWjXxOiIc04VG9o-FBQKOKwrSDtYrs1" class="">
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative w-full h-[819px] flex items-center px-margin-desktop bg-surface-container-low overflow-hidden">
+<div class="relative z-10 max-w-2xl">
+<div class="mb-md">
+<span class="inline-block px-sm py-xs bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm rounded-lg mb-sm">AGRICULTURAL PRECISION</span>
+<h1 class="font-display-lg text-display-lg text-on-surface leading-tight mb-md">RootSync: The Future of Nutrient Control</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl">Automated Organic Nutrient Delivery and Monitoring for&nbsp;<div>High-Performance Hydroponic Cultivation. Engineered for excellence&nbsp;</div><div>at the University of Kelaniya.</div></p>
+</div>
+<div class="flex gap-md">
+<button class="px-xl py-md bg-primary text-on-primary font-headline-md text-headline-md rounded-xl hover:opacity-90 active:scale-95 transition-all"><a href="dashboard.html">Launch Dashboard</a></button>
+<button class="px-xl py-md border border-outline text-on-surface font-headline-md text-headline-md rounded-xl hover:bg-surface-variant active:scale-95 transition-all"><a href="research.html">View Research</a></button>
+</div>
+</div>
+<div class="absolute right-0 top-0 w-1/2 h-full hidden lg:block">
+<img class="w-full h-full object-cover" data-alt="A high-tech hydroponic farm utilizing advanced vertical farming techniques. Neon green glowing growth lights illuminate rows of vibrant organic kale. The scene is clinical and professional, featuring high-end camera angles and a sophisticated, light-filled atmosphere with soft charcoal shadows and professional agriculture technology visible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALBXqTVu1JKU7V6I0SF7ZeqzVDNKYSztN506YaBDTY_Q_mFrLqhBXj7PBHb9UCqWngGXn22sokp9THUhNH6_L3K2a-l7a5LbfQInSviTmyzBuCxQqfHU-cjphLgtue_y-hRclhyoXQyCzRj_u7PwcEULnnVnxW7LGFQNHun5dHxLRg0pSjnM_h-qzSH_y4Tkp6KLpGIjj4FBfdkQI7mAgo52e7C2m7DR1IPBS0-tGZcFqHILXe4ooE9qvlHOn5r7OQpl5iWf3_QFjt">
+</div>
+</section>
+<!-- Bento Grid: About & Quick Stats -->
+<section class="px-margin-desktop py-xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 bg-surface-container-lowest p-lg rounded-xl shadow-sm border border-outline-variant">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-md">About HydroPure</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Our project addresses the critical challenge of manual nutrient balancing in organic hydroponics. By integrating AI-driven automation with biological precision, we ensure optimal plant growth through stabilized pH and EC levels, reducing waste and maximizing yield.</p>
+<div class="grid grid-cols-2 gap-md mt-lg">
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="energy_savings_leaf">energy_savings_leaf</span>
+<div>
+<p class="font-label-sm text-label-sm font-bold">ECO-FRIENDLY</p>
+<p class="text-on-surface-variant">100% Organic Nutrient Cycles</p>
+</div>
+</div>
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="precision_manufacturing">precision_manufacturing</span>
+<div>
+<p class="font-label-sm text-label-sm font-bold">AUTOMATED</p>
+<p class="text-on-surface-variant">Real-time pH Adjustment</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 bg-primary p-lg rounded-xl shadow-sm text-on-primary flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md">System Health</h3>
+<p class="opacity-80">Currently monitoring Batch 16A</p>
+</div>
+<div class="text-center py-md">
+<div class="font-display-lg text-display-lg">98%</div>
+<p class="font-label-sm text-label-sm tracking-widest uppercase">Efficiency Rating</p>
+</div>
+<button class="w-full py-sm bg-on-primary text-primary rounded-lg font-bold">System Logs</button>
+</div>
+</div>
+</section>
+<!-- System Features Grid -->
+<section class="px-margin-desktop py-xl bg-surface-container-low">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Core System Capabilities</h2>
+<p class="text-on-surface-variant">Precision Engineering Meets Biological Intelligence</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Feature 1 -->
+<div class="bg-surface-container-lowest p-lg rounded-xl shadow-sm hover:shadow-md transition-shadow border border-outline-variant">
+<div class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center mb-md text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="sensors">sensors</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Active Monitoring</h3>
+<p class="text-on-surface-variant">High-precision sensor arrays tracking pH, Electrical Conductivity (EC), and Temperature every 30 seconds.</p>
+</div>
+<!-- Feature 2 -->
+<div class="bg-surface-container-lowest p-lg rounded-xl shadow-sm hover:shadow-md transition-shadow border border-outline-variant">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center mb-md text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="settings_suggest">settings_suggest</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">AI Automation</h3>
+<p class="text-on-surface-variant">Predictive nutrient injection algorithms that adjust fertilizer concentrations based on growth phase and environment.</p>
+</div>
+<!-- Feature 3 -->
+<div class="bg-surface-container-lowest p-lg rounded-xl shadow-sm hover:shadow-md transition-shadow border border-outline-variant">
+<div class="w-12 h-12 rounded-lg bg-tertiary-container flex items-center justify-center mb-md text-on-tertiary-container">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Data Analytics</h3>
+<p class="text-on-surface-variant">Cloud-based dashboard providing historical trends and growth modeling via the NutriGrow UI platform.</p>
+</div>
+</div>
+</section>
+<!-- Sensor Card Preview -->
+<section class="px-margin-desktop py-xl">
+<div class="max-w-4xl mx-auto">
+<div class="bg-surface p-lg rounded-xl shadow-[0_4px_20px_0_rgba(0,0,0,0.04)] border border-outline-variant">
+<div class="flex justify-between items-center mb-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Live Nutrient Environment</span>
+<span class="flex items-center gap-xs px-sm py-1 bg-primary-fixed text-on-primary-fixed rounded-full font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Optimal
+                        </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
+<div>
+<div class="mb-sm text-on-surface-variant font-label-sm">pH Balance</div>
+<div class="font-data-display text-display-lg text-primary">6.4</div>
+<div class="h-16 w-full bg-surface-container-low mt-md relative overflow-hidden rounded-lg">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent"></div>
+<svg class="w-full h-full" viewBox="0 0 100 20">
+<path class="text-primary" d="M0 15 Q 10 10 20 12 T 40 8 T 60 14 T 80 10 T 100 12" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<div>
+<div class="mb-sm text-on-surface-variant font-label-sm">Nutrient Density (EC)</div>
+<div class="font-data-display text-display-lg text-secondary">1.8 <span class="text-headline-md">mS/cm</span></div>
+<div class="h-16 w-full bg-surface-container-low mt-md relative overflow-hidden rounded-lg">
+<div class="absolute inset-0 bg-gradient-to-t from-secondary/10 to-transparent"></div>
+<svg class="w-full h-full" viewBox="0 0 100 20">
+<path class="text-secondary" d="M0 12 Q 10 14 20 8 T 40 12 T 60 10 T 80 14 T 100 8" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Team Section -->
+<section class="px-margin-desktop py-xl">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Group 16 • University of Kelaniya</h2>
+<p class="text-on-surface-variant">The minds behind HydroPure Precision Agriculture</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Member Card -->
+<div class="bg-surface-container p-md rounded-xl text-center">
+<div class="w-24 h-24 mx-auto rounded-full bg-surface-variant mb-md overflow-hidden">
+<img alt="Team Lead" data-alt="A focused male engineering student in professional attire, looking directly at the camera with a confident expression. The environment is a modern university campus with clean architectural lines. The lighting is crisp and clear, following a professional corporate aesthetic with high-key whites and deep emerald green accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMrbmAqXZANku_2xNdNoZFHqk66GxXY_Js3Oc8eiIRdLfRdvUn7j3YaBLn9If6SBZcZaMMsgWmpiW8oLJeKsEkyRRWXYHkzU7Csosd5YymivhVEqsBC7AEkVTYjr95ig17s4GxXtG-_b1eEY6jKT0Wl6fhsZ6_OFSF89Vs46LJ5UHfNqVTCjZw1etf8l5zRc9O0h-zMMr_QBIA9gLkYUN1ivMA2N5Q6o3C65jMBHQg2HiilPyfpzBFbcnGsXI9234TLoabokA09kur" class="">
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Ranindi Dambakumbura</h4>
+<p class="font-label-sm text-label-sm text-primary uppercase">Team Lead / AI Architect</p>
+</div>
+<div class="bg-surface-container p-md rounded-xl text-center">
+<div class="w-24 h-24 mx-auto rounded-full bg-surface-variant mb-md overflow-hidden">
+<img alt="Nutrient Specialist" data-alt="A female biological science student examining a green plant sprout in a modern glass-walled greenhouse. She is wearing professional research gear. The scene is bright and airy, using a soft-shadowed white background and highlights of organic growth green. The mood is optimistic and clinical." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPdUSejlh7gfhxzaZqGhFTvcP9eR0ZSH9-yXg5bYxlXCKWaMNJF67twqlgTxcFBFbZrgMW_i74M5KMjNuUb0bedpoeQKaC_uo3hhvAsc9M51DJuHEGkOwFA-mMaAAFTZqQ_nHniGT50PxnYiIkqOkCClIhwHP_CfFq2UEg4S8EQ7_xjnrseexcUqonQzF3r558n4hNuLXSuowNjVEb3Vh9wvxqujXGmq29lkFMEz0PYOOxTY7a38mwmPoWhbiLkqAy-5FyXJVA1k6v" class="">
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Dilini Silva</h4>
+<p class="font-label-sm text-label-sm text-primary uppercase">Nutrient Specialist</p>
+</div>
+<div class="bg-surface-container p-md rounded-xl text-center">
+<div class="w-24 h-24 mx-auto rounded-full bg-surface-variant mb-md overflow-hidden">
+<img alt="Hardware Engineer" data-alt="A male electrical engineering student working on a circuit board with precision tools. High-tech laboratory lighting creates a stable and reliable atmosphere. The palette is dominated by professional greys and deep charcoal shadows, with bright green indicator lights reflecting the brand's 'Growth' theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpkNnIM6qpoLshJ05QIkpujczXCrwLlCQiqXUMmysCspa53hhzk0USBleNC-bv05_lVfvF_eHZyMxvThOxNKkN4iYe4F4j4YeANF8_NNRWC3jx6t44uKgH6MGOkk15VhfWNqBQh25UfRx9N4ufuSutMShHfbSDCKrEw1vBBiOKy5LOJClAkTAA9lxmXn-TjCRqIAmOAG6tO0xIj_iPga_KO8P2E1ckxonieFW3lRHoQY6aiWxeYuqMqu3uRW4y8YucDUef4WyYt5eL" class="">
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Nishantha Kumara</h4>
+<p class="font-label-sm text-label-sm text-primary uppercase">Hardware Engineer</p>
+</div>
+<div class="bg-surface-container p-md rounded-xl text-center">
+<div class="w-24 h-24 mx-auto rounded-full bg-surface-variant mb-md overflow-hidden">
+<img alt="UI Designer" data-alt="A female UI/UX designer working on a high-resolution tablet showing data visualizations. The setting is a minimalist, modern office with soft natural lighting. The aesthetic is extremely clean and high-density, using a disciplined palette of white, primary green, and blue data highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ0ZkYfiGjlNfChnMDTrrK1WILR2K6f51Y6qdatiKjKkiv2sPSR3G63Fu0cAjcsyFQ8FIhh36yv39dPo3VLrPnXGpiRCSb9S9C0pm02BYYSEXdG8GyiWgP05bA28LjdWahFU9NusXA7DHdzGYY3DRmFRLG4oO73hbkliNOW7rS-OWq1KtoZyJcjzjCfo1T8NC9Et0GOwiSqJWYb5ADjLDV2MpDMjqHWbR2Iw1sdddQ3ux8FcXUruvbRjCJfdA8l8dWZN7kuqCKl6xJ" class="">
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Ishani Rathnayake</h4>
+<p class="font-label-sm text-label-sm text-primary uppercase">Interface Design</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-highest flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-full gap-md full-width py-xl mt-auto border-t border-outline-variant">
+<div class="font-label-sm text-label-sm font-black tracking-widest text-on-surface-variant">NUTRI GROW AI</div>
+<div class="text-secondary font-body-md text-body-md text-center">
+            © 2024 University of Kelaniya • Precision Agriculture Dept.
+        </div>
+<div class="flex gap-md">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="#">Documentation</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="#">Project Proposal</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="#">University Credits</a>
+</div>
+</footer>
+<!-- FAB for Dashboard Access -->
+<button class="fixed bottom-lg right-lg w-16 h-16 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition-all z-40">
+<span class="material-symbols-outlined" data-icon="rocket_launch" style="font-variation-settings: &quot;FILL&quot; 1;">rocket_launch</span>
+</button>
+
+
+</body></html>

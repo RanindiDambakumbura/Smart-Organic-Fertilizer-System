@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-primary-container": "#a8e7c5",
+                  "on-secondary-fixed": "#001551",
+                  "on-error-container": "#93000a",
+                  "on-surface-variant": "#404943",
+                  "on-surface": "#121c2a",
+                  "surface-variant": "#d9e3f6",
+                  "on-primary-fixed": "#002114",
+                  "on-background": "#121c2a",
+                  "secondary-fixed": "#dce1ff",
+                  "secondary-fixed-dim": "#b7c4ff",
+                  "tertiary-container": "#865400",
+                  "primary": "#0f5238",
+                  "error": "#ba1a1a",
+                  "surface": "#f8f9ff",
+                  "outline": "#707973",
+                  "on-tertiary-container": "#ffd29e",
+                  "on-tertiary": "#ffffff",
+                  "surface-container-low": "#eff4ff",
+                  "primary-fixed": "#b1f0ce",
+                  "surface-container": "#e6eeff",
+                  "primary-container": "#2d6a4f",
+                  "on-error": "#ffffff",
+                  "tertiary-fixed": "#ffddb8",
+                  "tertiary": "#663f00",
+                  "primary-fixed-dim": "#95d4b3",
+                  "secondary-container": "#4069f2",
+                  "surface-bright": "#f8f9ff",
+                  "on-secondary-fixed-variant": "#0039b5",
+                  "surface-container-high": "#dee9fc",
+                  "error-container": "#ffdad6",
+                  "on-tertiary-fixed-variant": "#653e00",
+                  "surface-container-highest": "#d9e3f6",
+                  "inverse-on-surface": "#eaf1ff",
+                  "background": "#f8f9ff",
+                  "on-secondary": "#ffffff",
+                  "surface-container-lowest": "#ffffff",
+                  "secondary": "#1d4ed8",
+                  "on-primary-fixed-variant": "#0e5138",
+                  "surface-tint": "#2c694e",
+                  "on-secondary-container": "#fffbff",
+                  "inverse-surface": "#27313f",
+                  "on-primary": "#ffffff",
+                  "outline-variant": "#bfc9c1",
+                  "inverse-primary": "#95d4b3",
+                  "surface-dim": "#d0dbed",
+                  "tertiary-fixed-dim": "#ffb95f",
+                  "on-tertiary-fixed": "#2a1700"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "lg": "24px",
+                  "xl": "32px",
+                  "margin-mobile": "16px",
+                  "md": "16px",
+                  "base": "4px",
+                  "xs": "4px",
+                  "margin-desktop": "40px",
+                  "gutter": "20px",
+                  "sm": "8px"
+          },
+          "fontFamily": {
+                  "headline-lg": ["Inter"],
+                  "body-lg": ["Inter"],
+                  "headline-md": ["Inter"],
+                  "data-display": ["JetBrains Mono"],
+                  "display-lg": ["Inter"],
+                  "body-md": ["Inter"],
+                  "label-sm": ["Inter"]
+          },
+          "fontSize": {
+                  "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                  "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                  "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                  "data-display": ["20px", {"lineHeight": "24px", "fontWeight": "500"}],
+                  "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                  "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { background-color: #f8f9ff; font-family: 'Inter', sans-serif; }
+    .sensor-card-shadow { box-shadow: 0 4px 20px rgba(18, 28, 42, 0.04); }
+    .glass-effect { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(8px); }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full px-margin-desktop py-md sticky top-0 z-50 bg-surface shadow-sm">
+<div class="flex items-center gap-xl">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">NutriGrow AI</h1>
+<nav class="hidden md:flex gap-lg items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="#">Dashboard</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-semibold font-body-md text-body-md" href="#">Growth</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="#">History</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="#">Settings</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary p-xs active:scale-95 transition-all" data-icon="notifications">notifications</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="Grower Profile" data-alt="A professional headshot of a modern agricultural technologist in a clean studio setting. The lighting is soft and high-key, emphasizing a light-mode corporate aesthetic. He has a friendly, professional expression. The background is a minimalist, slightly out-of-focus high-tech laboratory environment with hints of Growth Green and neutral tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkoiSufMKFc3plKJpo0qraDS3669-OP7H4WQ8RopWpy_8jff8UyQ0qQdBqbAz3Ilgld2zZLXREQbgxrK42Qox7KpMUGZbZTBIgNIlYSH5DdtJijH8m2k6u_VZk9vdW1THZW5XoJk1pUTYGqave6tj58cmx0RTuCCMf3xFQW9YGLr9uZL7xL2XymoMcufF1n2HZKpXYLt5Vgf3B6AlzPy9AFJKs_I39AIgoXbzNDC9RAu6gRkrn8_3o3hjXpuJrHe38eMPBCFDnw_Ll"/>
+</div>
+</div>
+</header>
+<main class="flex-1 w-full px-margin-desktop py-xl max-w-[1440px] mx-auto">
+<!-- Hero Header -->
+<section class="flex flex-col md:flex-row justify-between items-start md:items-center mb-xl gap-md">
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<span class="px-sm py-xs bg-primary-container text-on-primary-container rounded-lg font-label-sm text-label-sm">BLOCK B4</span>
+<span class="text-outline font-label-sm text-label-sm">• RECENTLY UPDATED</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Cherry Tomatoes Block B4</h2>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-display-lg text-display-lg text-primary">94%</span>
+</div>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Health Score</p>
+</div>
+<button class="bg-primary text-on-primary px-lg py-md rounded-xl font-body-md text-body-md flex items-center gap-sm hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="ios_share">ios_share</span>
+          Export Detailed Report
+        </button>
+</div>
+</section>
+<!-- Main Content Bento Grid -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Growth Trend Chart (6 Columns) -->
+<div class="col-span-12 lg:col-span-7 bg-surface-container-lowest p-lg rounded-xl sensor-card-shadow border border-surface-container">
+<div class="flex justify-between items-center mb-lg">
+<h3 class="font-headline-md text-headline-md text-on-surface">Growth Trend</h3>
+<div class="flex gap-md">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 bg-primary rounded-full"></span>
+<span class="font-label-sm text-label-sm text-outline">Actual Biomass</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 bg-surface-variant rounded-full"></span>
+<span class="font-label-sm text-label-sm text-outline">Expected</span>
+</div>
+</div>
+</div>
+<div class="h-64 flex items-end justify-between gap-md px-sm">
+<!-- Day 1 -->
+<div class="flex-1 flex flex-col items-center gap-sm h-full justify-end">
+<div class="w-full flex gap-1 items-end justify-center h-full">
+<div class="w-4 bg-surface-variant rounded-t-sm h-[30%]"></div>
+<div class="w-4 bg-primary rounded-t-sm h-[28%]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Day 01</span>
+</div>
+<!-- Day 2 -->
+<div class="flex-1 flex flex-col items-center gap-sm h-full justify-end">
+<div class="w-full flex gap-1 items-end justify-center h-full">
+<div class="w-4 bg-surface-variant rounded-t-sm h-[42%]"></div>
+<div class="w-4 bg-primary rounded-t-sm h-[44%]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Day 02</span>
+</div>
+<!-- Day 3 -->
+<div class="flex-1 flex flex-col items-center gap-sm h-full justify-end">
+<div class="w-full flex gap-1 items-end justify-center h-full">
+<div class="w-4 bg-surface-variant rounded-t-sm h-[55%]"></div>
+<div class="w-4 bg-primary rounded-t-sm h-[52%]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Day 03</span>
+</div>
+<!-- Day 4 -->
+<div class="flex-1 flex flex-col items-center gap-sm h-full justify-end">
+<div class="w-full flex gap-1 items-end justify-center h-full">
+<div class="w-4 bg-surface-variant rounded-t-sm h-[68%]"></div>
+<div class="w-4 bg-primary rounded-t-sm h-[70%]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Day 04</span>
+</div>
+<!-- Day 5 -->
+<div class="flex-1 flex flex-col items-center gap-sm h-full justify-end">
+<div class="w-full flex gap-1 items-end justify-center h-full">
+<div class="w-4 bg-surface-variant rounded-t-sm h-[82%]"></div>
+<div class="w-4 bg-primary rounded-t-sm h-[85%]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Day 05</span>
+</div>
+<!-- Day 6 (Active) -->
+<div class="flex-1 flex flex-col items-center gap-sm h-full justify-end">
+<div class="w-full flex gap-1 items-end justify-center h-full">
+<div class="w-4 bg-surface-variant rounded-t-sm h-[95%] opacity-50"></div>
+<div class="w-4 bg-primary rounded-t-sm h-[100%] shadow-[0_-4px_12px_rgba(15,82,56,0.2)]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">Today</span>
+</div>
+</div>
+</div>
+<!-- Live Feed (5 Columns) -->
+<div class="col-span-12 lg:col-span-5 relative group overflow-hidden rounded-xl border border-surface-container bg-surface-dim sensor-card-shadow">
+<img class="w-full h-full object-cover" data-alt="A detailed, macro close-up of vibrant cherry tomato vines in a high-tech hydroponic facility. Small, unripe green tomatoes are clustered together under specialized growth lighting. The scene is crisp and detailed, showcasing the texture of the leaves and fine hairs on the stems. The lighting is cool-toned and professional, reflecting a clean, modern agricultural setting with hints of Growth Green and precise botanical monitoring." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ9TZF23eXI6_q4wGHLbRcl7uk_sfsOWpIWBjGpyrA7zKYbzeoXaZlRjmSbMqf3hZrDFhhheBDUw_1CNCtKuOdAMxb2s6aCxMlHoC9pvEKojFeSLCbQN0PT4B70lE4m2KKoKjYlOmZkVZtEowAvvBcjtyrmz1pp_2TFjvPuwKrjfAVf4sbl0zRuSILcknnyQhtyRKAKqo7UXCNbMYv8R0jVWI33NZQvkQ2laKAIOjSKCmrYiQIOzExuFTn8zD1RQQ9RvdM4YgWnDKl"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent"></div>
+<div class="absolute top-md left-md">
+<div class="flex items-center gap-sm px-md py-xs bg-error rounded-full text-on-error font-label-sm text-label-sm shadow-lg">
+<span class="w-2 h-2 bg-on-error rounded-full animate-pulse"></span>
+            LIVE
+          </div>
+</div>
+<div class="absolute bottom-md left-md right-md">
+<p class="font-label-sm text-label-sm text-surface tracking-widest font-black uppercase mb-xs">CAM_02 FEED • RECENT SCAN: 5M AGO</p>
+<div class="flex gap-xs">
+<div class="w-1/3 h-1 bg-primary rounded-full"></div>
+<div class="w-1/3 h-1 bg-primary rounded-full"></div>
+<div class="w-1/3 h-1 bg-surface/30 rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Vital Statistics Cards (Row) -->
+<div class="col-span-12 grid grid-cols-1 md:grid-cols-3 gap-gutter mt-gutter">
+<!-- Acidity -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-surface-container sensor-card-shadow">
+<div class="flex justify-between items-start mb-md">
+<span class="material-symbols-outlined text-tertiary p-sm bg-tertiary-fixed rounded-lg" data-icon="opacity">opacity</span>
+<span class="px-sm py-xs bg-primary-container/10 text-primary rounded font-label-sm text-label-sm">OPTIMAL</span>
+</div>
+<h4 class="font-label-sm text-label-sm text-outline mb-xs">Acidity</h4>
+<div class="flex items-baseline gap-xs">
+<span class="font-data-display text-display-lg text-on-background">6.5</span>
+<span class="font-body-md text-body-md text-outline">pH</span>
+</div>
+<div class="mt-md h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 75%"></div>
+</div>
+</div>
+<!-- Conductivity -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-surface-container sensor-card-shadow">
+<div class="flex justify-between items-start mb-md">
+<span class="material-symbols-outlined text-secondary p-sm bg-secondary-fixed rounded-lg" data-icon="electric_bolt">electric_bolt</span>
+<span class="px-sm py-xs bg-primary-container/10 text-primary rounded font-label-sm text-label-sm">STABLE</span>
+</div>
+<h4 class="font-label-sm text-label-sm text-outline mb-xs">Conductivity</h4>
+<div class="flex items-baseline gap-xs">
+<span class="font-data-display text-display-lg text-on-background">2.1</span>
+<span class="font-body-md text-body-md text-outline">mS/cm</span>
+</div>
+<div class="mt-md h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 60%"></div>
+</div>
+</div>
+<!-- Root Temp -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-surface-container sensor-card-shadow">
+<div class="flex justify-between items-start mb-md">
+<span class="material-symbols-outlined text-error p-sm bg-error-container rounded-lg" data-icon="thermostat">thermostat</span>
+<span class="px-sm py-xs bg-primary-container/10 text-primary rounded font-label-sm text-label-sm">STABLE</span>
+</div>
+<h4 class="font-label-sm text-label-sm text-outline mb-xs">Root Temp</h4>
+<div class="flex items-baseline gap-xs">
+<span class="font-data-display text-display-lg text-on-background">24.1</span>
+<span class="font-body-md text-body-md text-outline">°C</span>
+</div>
+<div class="mt-md h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 68%"></div>
+</div>
+</div>
+</div>
+<!-- Recent Observations (Full Width) -->
+<div class="col-span-12 mt-gutter">
+<div class="bg-surface-container-lowest rounded-xl border border-surface-container sensor-card-shadow">
+<div class="p-lg border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recent Observations</h3>
+<button class="text-secondary font-label-sm text-label-sm flex items-center gap-xs hover:underline">
+              View All Logs <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="divide-y divide-outline-variant">
+<!-- Log 1 -->
+<div class="p-lg flex items-start gap-lg hover:bg-surface-container-low transition-colors">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-primary-fixed-variant" data-icon="robot_2">robot_2</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-xs">
+<span class="font-label-sm text-label-sm text-primary font-bold">SCAN AUTOMATED • 10:20 AM</span>
+<span class="font-label-sm text-label-sm text-outline">Just now</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Pollination success at 88%. Yellow flowers showing high vigor.</p>
+</div>
+</div>
+<!-- Log 2 -->
+<div class="p-lg flex items-start gap-lg hover:bg-surface-container-low transition-colors">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0 border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="person">person</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-xs">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">MANUAL LOG • 09:15 AM</span>
+<span class="font-label-sm text-label-sm text-outline">2h ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Support stakes adjusted for vertical growth.</p>
+</div>
+</div>
+<!-- Log 3 -->
+<div class="p-lg flex items-start gap-lg hover:bg-surface-container-low transition-colors">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-primary-fixed-variant" data-icon="robot_2">robot_2</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-xs">
+<span class="font-label-sm text-label-sm text-primary font-bold">SCAN AUTOMATED • YESTERDAY</span>
+<span class="font-label-sm text-label-sm text-outline">1d ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Calcium levels adjusted to prevent blossom end rot.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container mt-auto border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-xl max-w-full gap-md">
+<div class="flex flex-col gap-xs">
+<span class="font-label-sm text-label-sm font-black tracking-widest text-on-surface-variant">NUTRI GROW AI</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-75">© 2024 University of Kelaniya • Precision Agriculture Dept.</p>
+</div>
+<div class="flex gap-lg">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Documentation</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Project Proposal</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">University Credits</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detailed Crop Report - NutriGrow AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed": "#002114",
+            "surface-tint": "#2c694e",
+            "primary": "#0f5238",
+            "on-tertiary-fixed": "#2a1700",
+            "on-secondary": "#ffffff",
+            "secondary": "#1d4ed8",
+            "on-primary-fixed-variant": "#0e5138",
+            "surface-bright": "#f8f9ff",
+            "error-container": "#ffdad6",
+            "tertiary-container": "#865400",
+            "surface": "#f8f9ff",
+            "on-tertiary-container": "#ffd29e",
+            "on-background": "#121c2a",
+            "surface-container": "#e6eeff",
+            "tertiary-fixed": "#ffddb8",
+            "on-primary": "#ffffff",
+            "secondary-fixed": "#dce1ff",
+            "on-secondary-fixed": "#001551",
+            "on-error": "#ffffff",
+            "secondary-container": "#4069f2",
+            "primary-fixed-dim": "#95d4b3",
+            "on-surface-variant": "#404943",
+            "inverse-on-surface": "#eaf1ff",
+            "surface-container-high": "#dee9fc",
+            "on-primary-container": "#a8e7c5",
+            "inverse-surface": "#27313f",
+            "primary-container": "#2d6a4f",
+            "primary-fixed": "#b1f0ce",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#653e00",
+            "surface-variant": "#d9e3f6",
+            "surface-dim": "#d0dbed",
+            "tertiary": "#663f00",
+            "on-surface": "#121c2a",
+            "tertiary-fixed-dim": "#ffb95f",
+            "outline": "#707973",
+            "secondary-fixed-dim": "#b7c4ff",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed-variant": "#0039b5",
+            "surface-container-low": "#eff4ff",
+            "on-error-container": "#93000a",
+            "background": "#f8f9ff",
+            "error": "#ba1a1a",
+            "surface-container-highest": "#d9e3f6",
+            "outline-variant": "#bfc9c1",
+            "inverse-primary": "#95d4b3",
+            "on-secondary-container": "#fffbff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-desktop": "40px",
+            "md": "16px",
+            "margin-mobile": "16px",
+            "gutter": "20px",
+            "xl": "32px",
+            "xs": "4px",
+            "sm": "8px",
+            "lg": "24px",
+            "base": "4px"
+          },
+          "fontFamily": {
+            "label-sm": ["Inter"],
+            "headline-lg": ["Inter"],
+            "data-display": ["JetBrains Mono"],
+            "body-lg": ["Inter"],
+            "headline-md": ["Inter"],
+            "display-lg": ["Inter"],
+            "body-md": ["Inter"]
+          },
+          "fontSize": {
+            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "data-display": ["20px", {"lineHeight": "24px", "fontWeight": "500"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .shadow-soft { box-shadow: 0 4px 20px 0 rgba(18, 28, 42, 0.04); }
+    .shadow-modal { box-shadow: 0 10px 30px 0 rgba(18, 28, 42, 0.08); }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .chart-bar-expected { background: repeating-linear-gradient(45deg, #d9e3f6, #d9e3f6 5px, #f8f9ff 5px, #f8f9ff 10px); }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar Implementation from JSON -->
+<header class="bg-surface shadow-sm sticky top-0 z-50 flex justify-between items-center w-full px-margin-desktop py-md">
+<div class="font-headline-md text-headline-md font-bold text-primary">NutriGrow AI</div>
+<nav class="hidden md:flex items-center gap-xl">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Dashboard</a>
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1 font-semibold" href="#">Growth</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">History</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary active:scale-95 transform transition-all" data-icon="notifications">notifications</button>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant">
+<img alt="Grower Profile" data-alt="A professional portrait of a tech-focused modern agriculturalist in a well-lit indoor environment. The image is clean and high-key, aligning with a light-mode corporate aesthetic. Soft natural lighting highlights a friendly and competent expression, utilizing a palette of soft neutrals and deep forest greens to match the NutriGrow AI brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADS9jzf5K3Eq1kNK6CS0f49Jv42t-VasZFxlBGMwruzEHN3GehKdBVLABTnEJ-d3bd3ja4ssoHUHMIYGcVrKWo0DRucyzP65FwPry9btix4Jy_w2wz9duIDOCP2aviHxewbDpXkbzLTBBiNQGe2rjtUsb7n75icfyNzleOle8n8wjHFjKWKzhz2aVmGQEwhOhxLX2fN7F8NseQF1VxpnOWVV8AIiVjgQp4GTC1NGymwLApDoj3IvgcxKD7WwWgEGJKSe1aRr2RR4iF"/>
+</div>
+</div>
+</header>
+<main class="flex-grow px-margin-desktop py-xl max-w-[1600px] mx-auto w-full">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-end mb-xl gap-lg">
+<div class="space-y-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="potted_plant">potted_plant</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Active Growth Zone / Block A1</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface">Parsley Block A1</h1>
+</div>
+<div class="flex flex-col items-end gap-sm">
+<div class="flex items-center gap-md bg-surface-container rounded-xl p-lg shadow-soft border border-outline-variant/30">
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-on-surface-variant">HEALTH SCORE</p>
+<p class="font-display-lg text-headline-lg text-primary">98%</p>
+</div>
+<div class="w-16 h-16 relative">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-highest" cx="32" cy="32" fill="transparent" r="28" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-primary" cx="32" cy="32" fill="transparent" r="28" stroke="currentColor" stroke-dasharray="175.9" stroke-dashoffset="3.5" stroke-width="6"></circle>
+</svg>
+<span class="absolute inset-0 flex items-center justify-center material-symbols-outlined text-primary" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+</div>
+<button class="flex items-center gap-sm px-lg py-md bg-primary text-on-primary rounded-lg font-label-sm text-label-sm hover:bg-primary-container transition-all shadow-soft active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+          EXPORT DETAILED REPORT (PDF/CSV)
+        </button>
+</div>
+</div>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Primary Data: Growth Trend Chart -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-xl p-lg shadow-soft border border-outline-variant/20">
+<div class="flex justify-between items-center mb-lg">
+<div class="space-y-xs">
+<h3 class="font-headline-md text-headline-md text-on-surface">Growth Trend</h3>
+<p class="font-body-md text-on-surface-variant">Actual vs Expected (Biomass Estimation)</p>
+</div>
+<div class="flex gap-md font-label-sm text-label-sm">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-sm bg-primary"></span> Actual
+            </div>
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-sm chart-bar-expected border border-outline-variant"></span> Expected
+            </div>
+</div>
+</div>
+<!-- Mock Chart Visualization -->
+<div class="h-[360px] flex items-end justify-between gap-sm pt-xl">
+<!-- Day 1 -->
+<div class="flex-1 flex flex-col items-center gap-sm h-full">
+<div class="flex-grow w-full flex items-end justify-center gap-1">
+<div class="w-1/3 chart-bar-expected rounded-t-sm" style="height: 15%"></div>
+<div class="w-1/3 bg-primary rounded-t-sm" style="height: 12%"></div>
+</div>
+<span class="font-label-sm text-on-surface-variant">D1</span>
+</div>
+<!-- Day 2 -->
+<div class="flex-1 flex flex-col items-center gap-sm h-full">
+<div class="flex-grow w-full flex items-end justify-center gap-1">
+<div class="w-1/3 chart-bar-expected rounded-t-sm" style="height: 25%"></div>
+<div class="w-1/3 bg-primary rounded-t-sm" style="height: 26%"></div>
+</div>
+<span class="font-label-sm text-on-surface-variant">D2</span>
+</div>
+<!-- Day 3 -->
+<div class="flex-1 flex flex-col items-center gap-sm h-full">
+<div class="flex-grow w-full flex items-end justify-center gap-1">
+<div class="w-1/3 chart-bar-expected rounded-t-sm" style="height: 35%"></div>
+<div class="w-1/3 bg-primary rounded-t-sm" style="height: 38%"></div>
+</div>
+<span class="font-label-sm text-on-surface-variant">D3</span>
+</div>
+<!-- Day 4 -->
+<div class="flex-1 flex flex-col items-center gap-sm h-full">
+<div class="flex-grow w-full flex items-end justify-center gap-1">
+<div class="w-1/3 chart-bar-expected rounded-t-sm" style="height: 48%"></div>
+<div class="w-1/3 bg-primary rounded-t-sm" style="height: 52%"></div>
+</div>
+<span class="font-label-sm text-on-surface-variant">D4</span>
+</div>
+<!-- Day 5 -->
+<div class="flex-1 flex flex-col items-center gap-sm h-full">
+<div class="flex-grow w-full flex items-end justify-center gap-1">
+<div class="w-1/3 chart-bar-expected rounded-t-sm" style="height: 62%"></div>
+<div class="w-1/3 bg-primary rounded-t-sm" style="height: 60%"></div>
+</div>
+<span class="font-label-sm text-on-surface-variant">D5</span>
+</div>
+<!-- Day 6 -->
+<div class="flex-1 flex flex-col items-center gap-sm h-full">
+<div class="flex-grow w-full flex items-end justify-center gap-1">
+<div class="w-1/3 chart-bar-expected rounded-t-sm" style="height: 78%"></div>
+<div class="w-1/3 bg-primary rounded-t-sm" style="height: 82%"></div>
+</div>
+<span class="font-label-sm text-on-surface-variant">D6</span>
+</div>
+<!-- Day 7 (Today) -->
+<div class="flex-1 flex flex-col items-center gap-sm h-full">
+<div class="flex-grow w-full flex items-end justify-center gap-1">
+<div class="w-1/3 chart-bar-expected rounded-t-sm" style="height: 90%"></div>
+<div class="w-1/3 bg-primary rounded-t-sm" style="height: 94%"></div>
+</div>
+<span class="font-label-sm text-primary font-bold">TODAY</span>
+</div>
+</div>
+</div>
+<!-- Vital Statistics Side Panel -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-gutter">
+<div class="bg-surface-container-lowest rounded-xl p-lg shadow-soft border border-outline-variant/20 flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-lg">Vital Statistics</h3>
+<div class="space-y-md">
+<!-- pH -->
+<div class="p-md bg-surface-container-low rounded-lg border border-outline-variant/10 flex justify-between items-center">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">ACIDITY (pH)</p>
+<p class="font-data-display text-data-display">6.2</p>
+</div>
+<div class="flex items-center gap-sm px-sm py-xs bg-primary/10 text-primary rounded-full font-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Optimal
+              </div>
+</div>
+<!-- EC -->
+<div class="p-md bg-surface-container-low rounded-lg border border-outline-variant/10 flex justify-between items-center">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">CONDUCTIVITY (EC)</p>
+<p class="font-data-display text-data-display">1.8 <span class="text-sm">mS/cm</span></p>
+</div>
+<div class="flex items-center gap-sm px-sm py-xs bg-primary/10 text-primary rounded-full font-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Stable
+              </div>
+</div>
+<!-- Temp -->
+<div class="p-md bg-surface-container-low rounded-lg border border-outline-variant/10 flex justify-between items-center">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">ROOT TEMP</p>
+<p class="font-data-display text-data-display">22.4°C</p>
+</div>
+<div class="flex items-center gap-sm px-sm py-xs bg-secondary-container/10 text-secondary rounded-full font-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Cooling Active
+              </div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl overflow-hidden shadow-soft border border-outline-variant/20">
+<div class="relative group">
+<img alt="Parsley Block Live Feed" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-resolution, macro photography shot of lush green parsley leaves in a modern hydroponic system. The image features sharp detail, soft diffused lighting from overhead LED grow lights, and a clinical, professional aesthetic. The deep green foliage is the focus, with stainless steel and high-tech irrigation components visible in the blurred background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7_fexMTKE3Gb_0nO_rtKyraQ_CUhfHHebzQpCNcLML0tKAl_fZRgwWbB9QhsbfXKF4s3PocZMZ6Z_KCdyQSXCH8v0ld1Jd3DmRqe0aNco_stl1pn4nJ-vNPe954CZ95Qj3S_yoe1mOOo3aEx1YFxs_6LU3IpmbV8xMNOET9lE5d07GZNXf27M-MVaQb4RXQPEQ7zgY8F0X32uJMWU8upp4h5kOWOYrvI3krsqvkOmMrBCCExlmpdcqCR1gbfCrQ1EEkCLmc8n7_L6"/>
+<div class="absolute top-4 left-4 bg-error text-white font-label-sm px-sm py-xs rounded flex items-center gap-sm">
+<span class="w-2 h-2 bg-white rounded-full animate-pulse"></span> LIVE
+            </div>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors pointer-events-none"></div>
+</div>
+<div class="p-md">
+<p class="font-label-sm text-on-surface-variant">CAM_04 FEED • RECENT SCAN: 2M AGO</p>
+</div>
+</div>
+</div>
+<!-- Recent Observations Timeline -->
+<div class="col-span-12 bg-surface-container-lowest rounded-xl p-lg shadow-soft border border-outline-variant/20">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-lg">Recent Observations</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Observation 1 -->
+<div class="relative pl-lg border-l-2 border-primary/20">
+<div class="absolute -left-[9px] top-0 w-4 h-4 bg-primary rounded-full border-2 border-white"></div>
+<div class="space-y-xs">
+<span class="font-label-sm text-primary">SCAN AUTOMATED • 10:45 AM</span>
+<h4 class="font-body-md font-bold text-on-surface">Chlorophyll Saturation Peak</h4>
+<p class="font-body-md text-on-surface-variant">Spectrographic analysis indicates 12% increase in nutrient uptake efficiency since previous cycle.</p>
+</div>
+</div>
+<!-- Observation 2 -->
+<div class="relative pl-lg border-l-2 border-outline-variant/20">
+<div class="absolute -left-[9px] top-0 w-4 h-4 bg-outline-variant rounded-full border-2 border-white"></div>
+<div class="space-y-xs">
+<span class="font-label-sm text-on-surface-variant">MANUAL LOG • 08:30 AM</span>
+<h4 class="font-body-md font-bold text-on-surface">Pruning Completed</h4>
+<p class="font-body-md text-on-surface-variant">Lower canopy thinned to improve airflow. New growth nodes marked for automated tracking.</p>
+</div>
+</div>
+<!-- Observation 3 -->
+<div class="relative pl-lg border-l-2 border-outline-variant/20">
+<div class="absolute -left-[9px] top-0 w-4 h-4 bg-outline-variant rounded-full border-2 border-white"></div>
+<div class="space-y-xs">
+<span class="font-label-sm text-on-surface-variant">SCAN AUTOMATED • YESTERDAY</span>
+<h4 class="font-body-md font-bold text-on-surface">Water Flow Nominal</h4>
+<p class="font-body-md text-on-surface-variant">Ultrasonic sensors confirm no blockages in the primary nutrient line for Block A1.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Implementation from JSON -->
+<footer class="bg-surface-container full-width py-xl mt-auto border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-full gap-md">
+<div class="font-label-sm text-label-sm font-black tracking-widest text-on-surface-variant">NUTRI GROW</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 University of Kelaniya • Precision Agriculture Dept.</p>
+<div class="flex gap-lg">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Documentation</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Project Proposal</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">University Credits</a>
+</div>
+</div>
+</footer>
+</body></html>
