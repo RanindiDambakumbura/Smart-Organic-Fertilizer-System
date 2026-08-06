@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-06-07T00:00:00.000Z" agent="Mozilla/5.0" version="24.0.0" type="device">
+  <diagram id="smart-fertilizer-er" name="Smart Fertilizer System ER">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- User Entity -->
+        <mxCell id="user-entity" value="User" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F4F8;strokeColor=#0E4C6F;strokeWidth=2;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="user-id" value="userId (PK)" style="text;html=1;align=left;verticalAlign=top;fontSize=11;fontStyle=1;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="60" y="100" width="100" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="user-attrs" value="username (UNIQUE)&#xa;email (UNIQUE)&#xa;password (HASHED)&#xa;firstName&#xa;lastName&#xa;role (user/admin)&#xa;createdAt&#xa;updatedAt" style="text;html=1;align=left;verticalAlign=top;fontSize=10;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="60" y="120" width="120" height="140" as="geometry" />
+        </mxCell>
+        
+        <!-- Plant Entity -->
+        <mxCell id="plant-entity" value="Plant" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F4F8;strokeColor=#0E4C6F;strokeWidth=2;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="350" y="50" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="plant-id" value="plantId (PK)" style="text;html=1;align=left;verticalAlign=top;fontSize=11;fontStyle=1;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="360" y="100" width="100" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="plant-attrs" value="userId (FK)&#xa;name (Parsley/Cherry Tomato)&#xa;status (active/dormant/harvested)&#xa;plantingDate&#xa;expectedHarvestDate&#xa;location&#xa;notes&#xa;optimalThresholds&#xa;  - phMin, phMax&#xa;  - tdsMin, tdsMax&#xa;  - tempMin, tempMax&#xa;createdAt&#xa;updatedAt" style="text;html=1;align=left;verticalAlign=top;fontSize=10;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="360" y="100" width="130" height="180" as="geometry" />
+        </mxCell>
+        
+        <!-- SensorData Entity -->
+        <mxCell id="sensor-entity" value="SensorData" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F4F8;strokeColor=#0E4C6F;strokeWidth=2;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="700" y="50" width="130" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="sensor-id" value="sensorDataId (PK)" style="text;html=1;align=left;verticalAlign=top;fontSize=11;fontStyle=1;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="710" y="100" width="120" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="sensor-attrs" value="plantId (FK)&#xa;timestamp&#xa;deviceId&#xa;sensors:&#xa;  - ph.value, ph.status&#xa;  - tds.value, tds.status&#xa;  - temperature.value&#xa;  - humidity.value&#xa;  - waterLevel.value" style="text;html=1;align=left;verticalAlign=top;fontSize=10;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="710" y="100" width="140" height="160" as="geometry" />
+        </mxCell>
+        
+        <!-- Alert Entity -->
+        <mxCell id="alert-entity" value="Alert" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF4E6;strokeColor=#D68D00;strokeWidth=2;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="380" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="alert-id" value="alertId (PK)" style="text;html=1;align=left;verticalAlign=top;fontSize=11;fontStyle=1;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="60" y="430" width="100" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="alert-attrs" value="plantId (FK)&#xa;userId (FK)&#xa;type (ph_low, ph_high,&#xa;  tds_low, tds_high,&#xa;  temp_low, temp_high)&#xa;severity (info/warning&#xa;  /critical)&#xa;message&#xa;sensorValue&#xa;threshold&#xa;status (active/acknowledged&#xa;  /resolved)&#xa;acknowledgedAt&#xa;acknowledgedBy (FK)&#xa;resolvedAt&#xa;createdAt" style="text;html=1;align=left;verticalAlign=top;fontSize=9;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="60" y="430" width="130" height="220" as="geometry" />
+        </mxCell>
+        
+        <!-- Control Entity -->
+        <mxCell id="control-entity" value="Control" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F0F0;strokeColor=#555555;strokeWidth=2;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="350" y="380" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="control-id" value="controlId (PK)" style="text;html=1;align=left;verticalAlign=top;fontSize=11;fontStyle=1;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="360" y="430" width="100" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="control-attrs" value="plantId (FK)&#xa;deviceType (pump, light, fan,&#xa;  heater, nutrient_dispenser)&#xa;status (on/off/standby)&#xa;mode (manual/automatic)&#xa;lastToggled&#xa;toggledBy (FK)&#xa;schedule:&#xa;  - enabled&#xa;  - startTime, endTime&#xa;  - daysOfWeek&#xa;createdAt&#xa;updatedAt" style="text;html=1;align=left;verticalAlign=top;fontSize=9;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="360" y="430" width="130" height="180" as="geometry" />
+        </mxCell>
+        
+        <!-- Relationships -->
+        
+        <!-- User to Plant (1:N) -->
+        <mxCell id="user-plant-rel" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0E4C6F;strokeWidth=2;dashed=0" edge="1" parent="1" source="user-entity" target="plant-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="user-plant-label" value="has&#xa;1:N" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="200" y="55" width="50" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Plant to SensorData (1:N) -->
+        <mxCell id="plant-sensor-rel" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0E4C6F;strokeWidth=2;dashed=0" edge="1" parent="1" source="plant-entity" target="sensor-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="plant-sensor-label" value="records&#xa;1:N" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="525" y="55" width="50" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Plant to Alert (1:N) -->
+        <mxCell id="plant-alert-rel" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#D68D00;strokeWidth=2;dashed=0" edge="1" parent="1" source="plant-entity" target="alert-entity">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="300" />
+              <mxPoint x="110" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="plant-alert-label" value="triggers&#xa;1:N" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="200" y="290" width="50" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- User to Alert (1:N) -->
+        <mxCell id="user-alert-rel" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#D68D00;strokeWidth=2;dashed=1" edge="1" parent="1" source="user-entity" target="alert-entity">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="110" y="300" />
+              <mxPoint x="110" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="user-alert-label" value="receives&#xa;1:N" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="85" y="300" width="50" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Plant to Control (1:N) -->
+        <mxCell id="plant-control-rel" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#555555;strokeWidth=2;dashed=0" edge="1" parent="1" source="plant-entity" target="control-entity">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="300" />
+              <mxPoint x="410" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="plant-control-label" value="controls&#xa;1:N" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="390" y="290" width="50" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- User to Control (acknowledgedBy relationship) -->
+        <mxCell id="user-control-rel" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#555555;strokeWidth=1;dashed=1" edge="1" parent="1" source="user-entity" target="control-entity">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="110" y="350" />
+              <mxPoint x="410" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="user-control-label" value="toggles" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="250" y="340" width="40" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Legend -->
+        <mxCell id="legend-title" value="Legend" style="text;html=1;align=center;fontSize=12;fontStyle=1;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="900" y="50" width="50" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend-pk" value="PK = Primary Key" style="text;html=1;align=left;fontSize=9;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="880" y="80" width="100" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend-fk" value="FK = Foreign Key" style="text;html=1;align=left;fontSize=9;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="880" y="100" width="100" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend-rel" value="Solid line = Strong Rel." style="text;html=1;align=left;fontSize=9;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="880" y="120" width="120" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend-rel2" value="Dashed line = Weak Rel." style="text;html=1;align=left;fontSize=9;strokeColor=none;fillColor=none" vertex="1" parent="1">
+          <mxGeometry x="880" y="140" width="120" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Cardinality Notation -->
+        <mxCell id="cardinality-info" value="Cardinality: 1:N = One User/Plant can have Many..." style="text;html=1;align=center;fontSize=9;strokeColor=none;fillColor=none;italic=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="730" width="400" height="20" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
